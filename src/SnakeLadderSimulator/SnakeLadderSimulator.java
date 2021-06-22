@@ -14,21 +14,24 @@ public class SnakeLadderSimulator
 
 //	variable
 	int PlayerPosition = 0 ;
+	int DicePlayedTimes = 0 ;
 	
 //	EXPRESIONS
 	while( PlayerPosition < GOAL ) 
 	{
-	
 		int DiceRoll = (int) (Math.floor(Math.random() * 10 ) % 6) + 1 ;
+		
+		DicePlayedTimes++ ;
+		
 		int PlayerOption = (int) Math.floor(Math.random() * 10 ) % 3 ;
 		
 		System.out.println("Dice value " + DiceRoll);
-		System.out.println( "Player option " + PlayerOption);
 		
 		switch ( PlayerOption )
 		{
 		
 		case LADDER :
+			System.out.println( "Player Choose Ladder  " );
 			
 			if ( ( PlayerPosition + DiceRoll ) <= GOAL )
 			{				
@@ -39,6 +42,7 @@ public class SnakeLadderSimulator
 			break;
 			
 		case SNAKE :		
+			System.out.println( "Player Choose Snake  " );
 			
 			if ( ( PlayerPosition - DiceRoll ) <= START_POSITION )
 			{
@@ -51,10 +55,12 @@ public class SnakeLadderSimulator
 			break;
 	
 		default:
+			System.out.println( "Player Choose No Play  " );
 			
 			break;
 		}
 		System.out.println("Player Position " + PlayerPosition + "\n --------");
 	}
+	System.out.println("The Number Of times played "+ DicePlayedTimes  );
  }
 }
