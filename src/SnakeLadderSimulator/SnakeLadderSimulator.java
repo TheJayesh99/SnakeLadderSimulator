@@ -2,31 +2,28 @@ package SnakeLadderSimulator;
 
 public class SnakeLadderSimulator
 {
+	//	CONSTANTS
+	public static final int START_POSITION = 0;
+	public static final int LADDER = 1 ;	
+	public static final int SNAKE = 2 ;
+	public static final int GOAL = 100 ;
+
 	public static void main(String[] args)
 	{
 		System.out.println( "WelCome To Snake Ladder Simulator" );
-		//	CONSTANTS
-		int START_POSITION = 0;
-		final int NO_PLAY = 0 ;
-		final int LADDER = 1 ;	
-		final int SNAKE = 2 ;
-		final int GOAL = 100 ;
 
-		//	variable
-
+		//	VARIABLES
 		boolean player1playing = true ;
-
 		int Player1Position = 0 ;
 		int Player2Position = 0 ;
 		int DicePlayedTimes = 0 ;
 		int PlayerPosition = 0 ;
 
-		//	EXPRESIONS
 		while( Player1Position < GOAL && Player2Position < GOAL ) 
 		{
+//			WHICH PLAYER IS PLAYING
 			if (player1playing)
 			{
-
 				System.out.println( "Player 1 Playing  " );
 				System.out.println( "Player 1 Position "+Player1Position );
 				PlayerPosition = Player1Position;
@@ -38,13 +35,14 @@ public class SnakeLadderSimulator
 				PlayerPosition = Player2Position;
 			}
 
+//			CONDITION FOR ROLLING THE DICE TO GET NUMBER BETWEEN 1-6
 			int DiceRoll = (int) (Math.floor(Math.random() * 10 ) % 6) + 1 ;
-
+			System.out.println("Dice value " + DiceRoll);
 			DicePlayedTimes++ ;
 
+//			CONDITION TO CHECK WHICH OPTION PLAYER CHOOSE
 			int PlayerOption = (int) Math.floor(Math.random() * 10 ) % 3 ;
 
-			System.out.println("Dice value " + DiceRoll);
 
 			switch ( PlayerOption )
 			{
@@ -77,7 +75,6 @@ public class SnakeLadderSimulator
 
 			default:
 				System.out.println( "Player Choose No Play  " );
-
 				break;
 			}
 
