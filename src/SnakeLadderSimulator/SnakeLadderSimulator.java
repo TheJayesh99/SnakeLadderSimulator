@@ -61,6 +61,9 @@ public class SnakeLadderSimulator
 		}
 		System.out.println("Player Position " + PlayerPosition + "\n --------");
 	}
+	
 	System.out.println("The Number Of times played "+ DicePlayedTimes  );
+ 
  }
+
 }
