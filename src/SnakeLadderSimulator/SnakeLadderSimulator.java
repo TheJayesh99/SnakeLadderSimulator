@@ -29,7 +29,13 @@ public class SnakeLadderSimulator
 		{
 		
 		case LADDER :
-			PlayerPosition = PlayerPosition + DiceRoll;
+			
+			if ( ( PlayerPosition + DiceRoll ) <= GOAL )
+			{				
+						
+				PlayerPosition = PlayerPosition + DiceRoll;
+			}
+			
 			break;
 			
 		case SNAKE :		
